@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6d8d5">
+<title>احبك مرررره ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--ink:#84213a;--red:#c83e61;--pink:#f6d8d5}
+body{margin:0;min-height:100svh;display:grid;place-items:center;background-color:var(--pink);background-image:linear-gradient(90deg,transparent 50%,#d8758b38 50%),linear-gradient(0deg,transparent 50%,#d8758b38 50%);background-size:112px 112px;color:var(--ink);font-family:"Cairo",system-ui,sans-serif;padding:18px}
+.card{width:min(100%,390px);text-align:center;padding:24px 18px;background:#f8e5e1dd;border:2px solid #9e2948;border-radius:28px;box-shadow:0 8px 0 #c57a8a}
+.kicker{font-size:11px;letter-spacing:2px;margin:0 0 6px;color:#a0445b}
+h1{font-size:clamp(35px,9vw,48px);line-height:1.25;margin:0 0 18px;font-weight:800}
+.hint{font-size:14px;margin:0 0 16px}
+.hearts{display:flex;justify-content:center;gap:8px;margin:0 0 13px;direction:ltr}
+.slot{width:51px;height:54px;background:#fff9f6;border:2px solid #4b1b24;border-radius:13px;display:grid;place-items:center;box-shadow:0 3px 0 #b35a6c;transition:.18s}
+.slot svg{width:29px;fill:#e9a6b4;stroke:#e9a6b4;transition:.18s}
+.slot.filled{background:#ffe9e9;transform:translateY(-2px)}
+.slot.filled svg{fill:#cb3457;stroke:#cb3457;transform:scale(1.12)}
+.keypad{width:min(100%,218px);margin:auto;background:#fffaf7;border:3px solid #3b1a20;border-radius:25px;padding:9px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+button{font-family:inherit}
+.key{min-height:51px;border:2px solid #a72d4c;border-radius:12px;background:#d34c6c;color:white;font-size:21px;font-weight:700;cursor:pointer;transition:transform .12s}
+.key:active{transform:scale(.94)}
+.utility{font-size:12px}
+.feedback{min-height:82px;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px}
+.message{font-size:17px;margin:0}
+.feedback.wrong .message,.card.shake{animation:shake .35s ease}
+.feedback.good .message{font-size:20px;font-weight:700}
+.continue{display:none;margin:0 auto 8px;background:#a82e4e;color:white;border:0;border-radius:999px;padding:11px 18px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 3px 0 #742039}
+.continue.show{display:block;animation:continueIn .35s ease}
+.foot{font-size:10px;letter-spacing:1px;margin:10px 0 0;color:#a0445b}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+@keyframes continueIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<main class="card" id="card">
+  <p class="kicker"لوئومتي ❤️</p>
+  <h1>أدخلي الرمز</h1>
+  <p class="hint">تلميح: يوم ما يُنسى 😉</p>
+  <div class="hearts" aria-label="الرمز من أربعة أرقام">
+    <span class="slot"><svg viewBox="0 0 24 24"><path d="M12 21S2.5 15.2 2.5 8.8C2.5 3.5 9 2.1 12 6.5c3-4.4 9.5-3 9.5 2.3C21.5 15.2 12 21 12 21Z"/></svg></span>
+    <span class="slot"><svg viewBox="0 0 24 24"><path d="M12 21S2.5 15.2 2.5 8.8C2.5 3.5 9 2.1 12 6.5c3-4.4 9.5-3 9.5 2.3C21.5 15.2 12 21 12 21Z"/></svg></span>
+    <span class="slot"><svg viewBox="0 0 24 24"><path d="M12 21S2.5 15.2 2.5 8.8C2.5 3.5 9 2.1 12 6.5c3-4.4 9.5-3 9.5 2.3C21.5 15.2 12 21 12 21Z"/></svg></span>
+    <span class="slot"><svg viewBox="0 0 24 24"><path d="M12 21S2.5 15.2 2.5 8.8C2.5 3.5 9 2.1 12 6.5c3-4.4 9.5-3 9.5 2.3C21.5 15.2 12 21 12 21Z"/></svg></span>
+  </div>
+  <div class="keypad" id="keypad">
+    <button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button>
+    <button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="6">6</button>
+    <button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button>
+    <button class="key utility" data-key="clear">مسح</button><button class="key" data-key="0">0</button><button class="key utility" data-key="delete">حذف</button>
+  </div>
+  <div class="feedback" id="feedback" aria-live="polite"><p class="message" id="message">يلا نشوف ذكاءك 😉</p></div>
+  <button class="continue" id="continue">يلا كملي </button>
+</main>
+<script>
+(() => {
+ const secret='1014', slots=[...document.querySelectorAll('.slot')], keypad=document.getElementById('keypad');
+ const feedback=document.getElementById('feedback'), message=document.getElementById('message'), card=document.getElementById('card'), cont=document.getElementById('continue');
+ let code='', locked=false;
+ function draw(){slots.forEach((s,i)=>s.classList.toggle('filled',i<code.length))}
+ function say(kind,txt){feedback.classList.remove('wrong','good');void feedback.offsetWidth;if(kind)feedback.classList.add(kind);message.textContent=txt}
+ function reset(txt='يلا نشوف ذكاءك 😉'){code='';draw();say('',txt)}
+ function check(){
+   if(code===secret){say('good','صحححح كفو عليكِ يا ذكية , اليوم المميز هوه يوم جائت وئومتي ع الدنيا  ');slots.forEach((s,i)=>setTimeout(()=>s.classList.add('filled'),i*100));locked=true;keypad.querySelectorAll('button').forEach(b=>b.disabled=true);cont.classList.add('show');}
+   else{say('wrong',' غلط 😂😝 جرّبي مرة ثانية');card.classList.remove('shake');void card.offsetWidth;card.classList.add('shake');setTimeout(()=>reset('ألمح لك؟ هوه تاريخ يوم مميز عندي'),1000)}
+ }
+ keypad.addEventListener('click',e=>{const b=e.target.closest('button[data-key]');if(!b||locked)return;let k=b.dataset.key;if(k==='clear'){reset();return}if(k==='delete'){code=code.slice(0,-1);draw();return}if(/^\d$/.test(k)&&code.length<4){code+=k;draw();if(code.length===4)setTimeout(check,180)}});
+ document.addEventListener('keydown',e=>{if(locked)return;if(/^\d$/.test(e.key))keypad.querySelector(`[data-key="${e.key}"]`)?.click();else if(e.key==='Backspace')keypad.querySelector('[data-key="delete"]')?.click();else if(e.key==='Escape')keypad.querySelector('[data-key="clear"]')?.click()});
+ cont.addEventListener('click',()=>{window.location.href='../page2/index.html'});
+})();
+</script>
+</body>
+</html>
